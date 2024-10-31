@@ -1,0 +1,143 @@
+/* Full-screen container */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000; /* Black background initially */
+}
+
+/* Button styling */
+.open-card-button {
+  position: absolute;
+  z-index: 2; /* Ensure button is above other elements */
+  bottom: 20px;
+  font-size: 1.5em;
+  background-color: #ff9f1c;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Card structure */
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Front Pages */
+.front {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: transform 3s ease;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.left-page {
+  left: 0;
+  transform-origin: left;
+}
+
+.right-page {
+  right: 0;
+  transform-origin: right;
+}
+
+.front-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Deity Images */
+.deity {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  opacity: 0; /* Initially hidden */
+  animation: appear 2s forwards; /* Appear animation */
+}
+
+.left-deity {
+  left: 20%; /* Position on the left side */
+  animation-delay: 1s; /* Delay before starting the animation */
+}
+
+.right-deity {
+  right: 20%; /* Position on the right side */
+  animation-delay: 1s; /* Delay before starting the animation */
+}
+
+/* Greeting Message Content */
+.message-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: url('https://i.ibb.co/cTkKQ3w/HD-wallpaper-diwali-festival-greetings-happy-light-wishes-thumbnail.jpg') center/cover no-repeat;
+  opacity: 0;
+  color: #ffeb3b;
+  transition: opacity 1.5s ease;
+}
+
+.message-content h1 {
+  color: #ffd700;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #ffdf00, 0 0 20px #ff4500;
+  animation: flicker 1.5s infinite alternate;
+  text-align: center;
+}
+
+.message-content p {
+  color: #ffecb3;
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* Keyframes */
+@keyframes appear {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px #ffd700; }
+  to { box-shadow: 0 0 25px #ff4500; }
+}
+
+@keyframes flicker {
+  from { opacity: 0.9; }
+  to { opacity: 1; }
+}
