@@ -19,3 +19,5 @@ This project is a festive Diwali greeting card created to celebrate the festival
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/Deadlox-Diwali-greeting-card-2024.git
+2. direct use:
+   [click here](https://vixar3.github.io/Deadlox-Diwali-greeting-card-2024/)
